@@ -24,8 +24,7 @@ After=network.target
 User=username
 Group=www-data
 WorkingDirectory=/path/to/your/project
-Environment="PATH=/path/to/poetry/bin:$PATH"
-ExecStart=/path/to/poetry/bin/poetry poetry run python app.py
+ExecStart=/bin/bash -c '$(which poetry) run python app.py'
 
 [Install]
 WantedBy=multi-user.target
